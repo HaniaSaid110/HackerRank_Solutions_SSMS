@@ -1,0 +1,25 @@
+select
+case
+when A + B <= C or A + C <= B or B + C <= A then 'Not A Triangle'
+when A = B and B = C then 'Equilateral'
+when A = B or B = C or A = C then 'Isosceles'
+else 'Scalene'
+end
+from triangles;
+
+--another answer
+
+select
+case
+when A = B and B = C then 'Equilateral'
+when A + B <= C or A + C <= B or B + C <= A then 'Not A Triangle'
+when A = B or B = C or A = C then 'Isosceles'
+else 'Scalene'
+end
+from triangles;
+
+/*Note: the conditions in the case statement MUST be written in that specific order in either answers.
+
+if you start with 'Isosceles', you will output the polygons that should be under the 'Not A Triangle' category as 'Isosceles', because there are other polygons which share the same property.
+you have to make sure it's a triangle first, and then identify its type.
+as for equilateral triangles, no other polygon shares the same property. so it can be put as the first condition as in the second answer.*/
