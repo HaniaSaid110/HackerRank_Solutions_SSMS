@@ -1,9 +1,11 @@
 SELECT cast(ceiling(avg(cast(salary as float)) - avg(cast(replace(salary, 0, '') as float))) as int)
 FROM employees;
 
-/*Note: in SSMS, sometimes the aggregate function AVG outputs the value excluding the decimals, e.g. if the average is 50.6 it outputs 50
+/*
+Note: in SSMS, sometimes the aggregate function AVG outputs the value excluding the decimals, e.g. if the average is 50.6 it outputs 50
 to solve this problem we use CAST function inside AVG function and specify that we want the number to show as FLOAT so it shows the decimals,
 this helps in showing the full number for the correct calculation
 
 the CEILING function rounds the number to the nearest integer, whereas ROUND approximates the number to the nearest nth decimal
-there will still be a .0 resulting from the calculation, so we put the whole calculation inside a CAST function and show the number as INT*/
+there will still be a .0 resulting from the calculation, so we put the whole calculation inside a CAST function and show the number as INT
+*/
