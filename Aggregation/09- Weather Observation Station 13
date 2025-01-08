@@ -1,0 +1,5 @@
+select round(sum(lat_n), 4)
+from station
+where lat_n > 38.7880 and lat_n < 137.2345;
+
+--sumbit answer on MySQL instead of SSMS because it will give a wrong-answer error even though it's the same output
