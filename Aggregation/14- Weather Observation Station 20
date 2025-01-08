@@ -1,0 +1,7 @@
+select cast(
+  round((
+          (select max(lat_n) from (select top 50 percent lat_n from station order by lat_n) as a)
+          +
+          (select min(lat_n) from (select top 50 percent lat_n from station order by lat_n desc) as b)
+        )/2, 4)
+        as decimal(10,4) );
