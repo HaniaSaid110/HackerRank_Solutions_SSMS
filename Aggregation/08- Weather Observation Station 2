@@ -2,3 +2,7 @@ select round(sum(lat_n), 2), round(sum(long_w), 2)
 from station;
 
 --sumbit answer on MySQL instead of SSMS because it will give a wrong-answer error even though it's the same output
+-- OR use: CAST .. AS DECIMAL(n, 2) as below:
+
+select cast(round(sum(lat_n), 2) as decimal(10,2)), cast(round(sum(long_w), 2)as decimal(10,2))
+from station;
