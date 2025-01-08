@@ -1,0 +1,4 @@
+select round((max(lat_n) - min(lat_n)) + (max(long_w) - min(long_w)), 4)
+from station;
+
+--sumbit answer on MySQL instead of SSMS because it will give a wrong-answer error even though it's the same output
