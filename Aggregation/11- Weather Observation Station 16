@@ -1,0 +1,5 @@
+select round(min(lat_n), 4)
+from station
+where lat_n > 38.7780;
+
+--sumbit answer on MySQL instead of SSMS because it will give a wrong-answer error even though it's the same output
